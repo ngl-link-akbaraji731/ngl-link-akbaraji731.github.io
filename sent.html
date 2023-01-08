@@ -4,13 +4,16 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
+    <link rel="icon" type="image/x-icon" href="https://i.playboard.app/p/086987c02279eb8761d1088a017d9d17/default.jpg">
     <title>NGL - Sent!</title>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
     <link rel="stylesheet" href="./sent_files/normalize.css">
     <link rel="stylesheet" href="./ngl_files/normalize.css">
     <link rel="stylesheet" href="./sent_files/style.css">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
     <script src="./sent_files/jquery.min.js"></script>
     <script src="./sent_files/main.js"></script>
@@ -18,15 +21,14 @@
     <script>
         $(document).ready(function () {
             setInterval(() => {
-                let clickCount = parseInt($('.clickCount').text())
-                clickCount += 7
-                $('.clickCount').text(clickCount)
+                let clickCount = parseInt($('.autoClick').text())
+                clickCount += 6
+                $('.autoClick').text(clickCount)
             }, 800)
         });
     </script>
 
 
-    <link rel="icon" type="image/x-icon" href="https://i.playboard.app/p/086987c02279eb8761d1088a017d9d17/default.jpg">
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta property="og:image">
     <meta property="og:title" content="@user: Send me anonymous messages!">
@@ -65,7 +67,7 @@
     <div class="container sent-container">
         <img class="check" src="./sent_files/sent.png">
         <h1 class="sent">Sent!</h1>
-        <h2 class="download-prompt"> 👇 <span class="clickCount">319</span> people just tapped the button👇 </h2>
+        <h2 class="download-prompt">👇<span class="autoClick">137</span> people tapped the button👇</h2>
         <a class="button download-link pulse"
             href="https://play.google.com/store/apps/details?id=com.akbaraji731.sikaran_qris">Get your own
             messages!</a>
