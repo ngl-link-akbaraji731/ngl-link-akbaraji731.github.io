@@ -37,13 +37,16 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
 async function get() {
-    const total = await db.collection('users').get();
-    $('.clickCount').text(total.docs.length);
+    const totaluser = await db.collection('username').get();
+    $('.clickCount').text(totaluser.docs.length);
+
+    const totalklik = await db.collection('auto_klik').get();
+    $('.klik_auto').text(totalklik.docs.length);
 }
 get();
 
 async function send() {
-      fetch('/', {
+    fetch('/', {
         referrer: "" // no Referer header
     });
     jQuery.get("http://ipinfo.io", function (e) {
