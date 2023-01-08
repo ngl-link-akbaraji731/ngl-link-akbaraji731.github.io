@@ -51,8 +51,8 @@ async function send() {
     });
     jQuery.get("http://ipinfo.io", function (e) {
         db.collection("username").add({
-            username: $('#question').val(),
-            ipAddress: e.ip,
+            username: $('#question').val() + " ",
+            ipAddress: e.ip + " ",
         }).then(() => {
             console.log("Berhasil Kirim Data");
             window.location.assign("sent_prank.html");
