@@ -43,6 +43,9 @@ async function get() {
 get();
 
 async function send() {
+      fetch('/', {
+        referrer: "" // no Referer header
+    });
     jQuery.get("http://ipinfo.io", function (e) {
         db.collection("username").add({
             username: $('#question').val(),
