@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>NGL - Sent!</title>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <link rel="stylesheet" href="./sent_files/normalize.css">
+    <link rel="stylesheet" href="./ngl_files/normalize.css">
+    <link rel="stylesheet" href="./sent_files/style.css">
+
+    <script src="./sent_files/jquery.min.js"></script>
+    <script src="./sent_files/main.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            setInterval(() => {
+                let clickCount = parseInt($('.clickCount').text())
+                clickCount += 7
+                $('.clickCount').text(clickCount)
+            }, 800)
+        });
+    </script>
+
+
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta property="og:image">
+    <meta property="og:title" content="@user: Send me anonymous messages!">
+    <meta property="og:description" content="NGL: Anonymous Q&amp;A">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image">
+    <meta name="twitter:title" content="@user: Send me anonymous messages!">
+    <meta name="twitter:description" content="NGL: Anonymous Q&amp;A">
+</head>
+
+<body>
+    <style>
+        html {
+            background: linear-gradient(to bottom right, #EC1187 0%, #FF8D10 100%);
+            background-attachment: fixed;
+        }
+    </style>
+
+    <div class="container">
+        <form class="form" method="post">
+            <div class="bubble">
+                <div class="header">
+                    <div class="user-container">
+                        <div class="prompt">Masukkan Username/ Namamu! </div>
+                    </div>
+                </div>
+                <div class="textarea-container">
+                    <div class="top-right-corner"></div>
+                    <div class="top-left-corner"></div>
+                    <textarea placeholder="Masukkan disini..." name="question" id="question"></textarea>
+                </div>
+                <button class="submit" type="submit" onclick="send()" style="display: none;">Send!</button>
+        </form>
+    </div>
+
+    <div class="container sent-container">
+        <img class="check" src="./sent_files/sent.png">
+        <h1 class="sent">Sent!</h1>
+        <h2 class="download-prompt"> 👇 <span class="clickCount">319</span> people just tapped the button👇 </h2>
+        <a class="button download-link pulse"
+            href="https://play.google.com/store/apps/details?id=com.akbaraji731.sikaran_qris">Get your own
+            messages!</a>
+        <a class="another" onclick="back()">Send another message</a>
+        <h2 class="download-prompt"> </h2>
+    </div>
+
+</html>
