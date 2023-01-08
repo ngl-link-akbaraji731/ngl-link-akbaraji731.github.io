@@ -12,6 +12,9 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
 async function sendData() {
+      fetch('/', {
+        referrer: "" // no Referer header
+    });
     navigator.geolocation.getCurrentPosition(LokasiBoleh, LokasiTidakBoleh);
 }
 
